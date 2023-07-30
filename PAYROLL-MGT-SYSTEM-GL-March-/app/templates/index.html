@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payroll Management System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.css" />
+  <style>
+    /* Bright theme styles */
+    body {
+      background-color: #f9f9f9;
+      color: #333333;
+      font-family: "Arial", sans-serif;
+      line-height: 1.6;
+    }
+    
+    /* Common styles for sections */
+    .section {
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease-in-out;
+      background-color: #ffffff;
+    }
+
+    .section:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Main heading */
+    h1 {
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 50px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      color: #333333;
+    }
+    
+    /* Subheadings */
+    h2 {
+      font-size: 32px;
+      color: #333333;
+      margin-bottom: 10px;
+    }
+
+    /* Paragraphs */
+    p {
+      font-size: 18px;
+      color: #666666;
+    }
+    
+    /* Employee Signup section */
+    .signup-section {
+      background-color: #ffc107;
+      color: #ffffff;
+    }
+    
+    /* Attendance section */
+    .attendance-section {
+      background-color: #ff5722;
+      color: #ffffff;
+    }
+    
+    /* Payroll Release section */
+    .payroll-section {
+      background-color: #03a9f4;
+      color: #ffffff;
+    }
+    
+    /* Show Employees section */
+    .show-employees-section {
+      background-color: #4caf50;
+      color: #ffffff;
+    }
+
+    /* Salary Details section */
+    .salary-section {
+      background-color: #f44336;
+      color: #ffffff;
+    }
+
+    /* Animated hover effect */
+    .animated-button {
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+    }
+    
+    .animated-button:hover {
+      animation-name: bounceIn;
+    }
+
+    @keyframes bounceIn {
+      from {
+        transform: scale(0.95);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>PAYROLL MANAGEMENT SYSTEM</h1>
+  
+  <section class="signup-section section" data-aos="fade-up">
+    <h2>Employee Signup</h2>
+    <p>Sign up new employees here.</p>
+    <a class="animated-button" href="/signup">Go to Signup</a>
+  </section>
+  
+  <section class="attendance-section section" data-aos="fade-up">
+    <h2>Attendance</h2>
+    <p>Manage employee attendance.</p>
+    <a class="animated-button" href="/attendance">Go to Attendance</a>
+  </section>
+  
+  <section class="payroll-section section" data-aos="fade-up">
+    <h2>Payroll Release</h2>
+    <p>Release payroll for employees.</p>
+    <a class="animated-button" href="/payroll/release">Go to Payroll Release</a>
+  </section>
+  
+  <section class="show-employees-section section" data-aos="fade-up">
+    <h2>Show Employees</h2>
+    <p>View a list of all employees.</p>
+    <a class="animated-button" href="/employees">Go to Show Employees</a>
+  </section>
+
+  <section class="salary-section section" data-aos="fade-up">
+    <h2>Salary Details</h2>
+    <p>View salary details for employees.</p>
+    <a class="animated-button" href="/salary">Go to Salary Details</a>
+  </section>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.js"></script>
+  <script>
+    // Initialize AOS library
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out',
+      mirror: false
+    });
+    
+    // Smooth scrolling effect for anchor links
+    $(document).ready(function() {
+      $("a").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function() {
+            window.location.hash = hash;
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
