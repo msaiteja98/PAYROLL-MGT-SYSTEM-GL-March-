@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payroll Management System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.css" />
+  <style>
+    /* Dark theme styles */
+    body {
+      background-color: #121b2b;
+      color: #000;
+      font-family: "Arial", sans-serif;
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    /* Main heading */
+    h1 {
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+      color: #000;
+    }
+
+    /* Subheadings */
+    h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #000;
+    }
+
+    /* Paragraphs */
+    p {
+      font-size: 18px;
+      color: #666666;
+    }
+
+    /* Animated hover effect */
+    .animated-button {
+      animation-duration: 0.5s;
+      animation-fill-mode: both;
+      margin-top: 20px;
+      background-color: #ff6b6b;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .animated-button:hover {
+      background-color: #ff5050;
+    }
+
+    /* Center sections */
+    .section-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* Dark theme section styles */
+    .section {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      margin: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: box-shadow 0.3s ease-in-out;
+      color: #000;
+    }
+
+    .section:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes bounceIn {
+      from {
+        transform: scale(0.95);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="section-container">
+    <h1>PAYROLL MANAGEMENT SYSTEM</h1>
+  
+    <section class="section signup-section" data-aos="fade-up">
+      <h2>Employee Signup</h2>
+      <p>Sign up new employees here.</p>
+      <a class="animated-button" href="/signup">Go to Signup</a>
+    </section>
+  
+    <section class="section attendance-section" data-aos="fade-up">
+      <h2>Attendance</h2>
+      <p>Manage employee attendance.</p>
+      <a class="animated-button" href="/attendance">Go to Attendance</a>
+    </section>
+  
+    <section class="section payroll-section" data-aos="fade-up">
+      <h2>Payroll Release</h2>
+      <p>Release payroll for employees.</p>
+      <a class="animated-button" href="/payroll/release">Go to Payroll Release</a>
+    </section>
+  
+    <section class="section show-employees-section" data-aos="fade-up">
+      <h2>Show Employees</h2>
+      <p>View a list of all employees.</p>
+      <a class="animated-button" href="/employees">Go to Show Employees</a>
+    </section>
+  
+    <section class="section salary-section" data-aos="fade-up">
+      <h2>Salary Details</h2>
+      <p>View salary details for employees.</p>
+      <a class="animated-button" href="/salary">Go to Salary Details</a>
+    </section>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.js"></script>
+  <script>
+    // Initialize AOS library
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out',
+      mirror: false
+    });
+    
+    // Smooth scrolling effect for anchor links
+    $(document).ready(function() {
+      $("a").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function() {
+            window.location.hash = hash;
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
